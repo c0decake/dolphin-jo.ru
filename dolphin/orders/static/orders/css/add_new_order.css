@@ -1,0 +1,63 @@
+.form-container {
+    width: 50%;
+    height: 500px;
+
+    margin: auto;
+
+    background-color: #b2dba1;
+    border-radius: 10px;
+
+
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.form-container header {
+    width: 100%;
+    height: 15%;
+
+    background-color: #000;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.new-order-form {
+
+}
+
+.location {
+    display: flex;
+    align-items: center;
+
+    font-weight: 600;
+}
+
+.field-icons {
+    width: 25px;
+    aspect-ratio: 1/1;
+}
+
+.order-field {
+    width: 200px;
+    height: 35px;
+
+    background-color: lightgrey;
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 50px;
+    padding: 5px 20px;
+    border: 1px black solid;
+
+    transition: .3s;
+}
+
+.order-field::placeholder {
+    color: grey;
+}
+
+.order-field:focus {
+    background-color: white;
+    transition: .3s;
+}

@@ -1,0 +1,26 @@
+{% extends 'login_base.html' %}
+{% load static %}
+{% block 'Main' %}
+<link rel="stylesheet" href="{% static 'accounts/login/css/login.css' %}">
+<div class="wrapper">
+    <form action="{% url 'login-page' %}" method="post" class="login-frm">
+        {% csrf_token %}
+        <div class="header">
+            <span class="brand"><img src="{% static 'Base/icons/brand_white.svg' %}" alt="#" class="brand-ico"></span>
+            <span class="stage-title">Авторизация</span>
+        </div>
+        <div class="fields">
+            <input type="text" name="login" class="login-fld" placeholder="Логин">
+            <input type="password" name="password" class="password-fld" placeholder="Пароль">
+        </div>
+        <div class="buttons">
+            <button class="login-btn" type="submit">Войти</button>
+            <a href="{% url 'register-page' %}" class="register-btn">Создать аккаунт</a>
+        </div>
+        <div class="bottom">
+
+        </div>
+    </form>
+</div>
+<script src="{% static 'accounts/login/js/login.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Main %}
+<link rel="stylesheet" href="{% static 'orders/css/all_orders.css' %}">
+<div class="orders-container">
+    <div class="orders" id="orders"></div>
+</div>
+<script src="{% static 'orders/js/all.js' %}"></script>
+{% endblock %}

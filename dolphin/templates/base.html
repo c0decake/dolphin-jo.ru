@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'Base/icons/brand.svg' %}">
+    <link rel="stylesheet" href="{% static 'Base/css/base.css' %}">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="brand">
+            <img src="{% static 'Base/icons/brand_white.svg' %}" alt="#" class="logo">
+            <span class="brand-title">Dolphin Jo</span>
+        </div>
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="{% url 'news-page' %}">Новости</a></li>
+                <li><a href="{% url 'all-orders-page' %}">Заказы</a></li>
+                <li><a href="">Добавленные</a>
+                    <ul class="my-orders">
+                        <li><a href="{% url 'my-orders-page' %}">Список</a></li>
+                        <li><a href="{% url 'add-new-order' %}">Добавить</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'profile' %}">Профиль</a></li>
+                <li><a href="{% url 'logout' %}">Выйти</a></li>
+            </ul>
+        </div>
+    </header>
+    {% block Main %}{% endblock %}
+</div>
+</body>
+</html>

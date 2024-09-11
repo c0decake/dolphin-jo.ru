@@ -1,0 +1,18 @@
+{% extends 'login_base.html' %}
+{% load static %}
+{% block 'Main' %}
+<link rel="stylesheet" href="{% static 'accounts/register/css/register.css' %}">
+<div class="wrapper">
+    <form action="{% url 'register-page' %}" method="post" class="register-frm">
+        {% csrf_token %}
+        <input type="text" name="last_name" placeholder="Фамилия">
+        <input type="text" name="first_name" placeholder="Имя">
+        <input type="text" name="father_name" placeholder="Отчество">
+        <input type="text" name="username" placeholder="Логин">
+        <input type="password" name="password" placeholder="Пароль">
+        <input type="password" name="password_2" placeholder="Повтор пароля">
+        <button class="register-btn" type="submit">Создать аккаунт</button>
+        <a href="{% url 'login-page' %}" class="login-btn">Уже есть аккаунт</a>
+    </form>
+</div>
+{% endblock %}

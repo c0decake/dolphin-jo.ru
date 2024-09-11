@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Main %}
+<link rel="stylesheet" href="{% static 'orders/css/add_new_order.css' %}">
+<div class="form-container">
+    <header>
+        <section class="brand">
+            <img src="" alt="" class="logo">
+            Dolphin Jo
+        </section>
+        <section class="stage-title">
+            Новый заказ
+        </section>
+    </header>
+    <form action="{% url 'add-new-order' %}" class="new-order-form" method="post">
+        {% csrf_token %}
+        <section class="location">
+            <img src="{% static 'orders/icons/location.svg' %}" alt="" class="field-icons">
+            <span>Местоположение</span>
+            <select name="shop" id="shop-selector" class="shop"></select>
+        </section>
+        <section class="datetime">
+            <img src="{% static 'orders/icons/location.svg' %}" alt="" class="field-icons">
+            <span>Дата и время</span>
+            <input type="date" name="work_date" class="order-field work-date" placeholder="Дата смены">
+            <input type="text" name="time_in" class="order-field time-in" placeholder="Время начала">
+            <input type="text" name="time_out" class="order-field time-out" placeholder="Время окончания">
+        </section>
+        <section>
+            <span>🚕 <input type="checkbox" name="taxi_to"></span>
+            <span>🚖 <input type="checkbox" name="taxi_from"></span>
+            <span>🍲 <input type="checkbox" name="food"></span>
+            <span>🥤 <input type="checkbox" name="drinks"></span>
+            <span>🚾 <input type="checkbox" name="toilet"></span>
+        </section>
+        <input type="text" name="rating" class="order-field rating" placeholder="Минимальный рейтинг">
+        <select name="post" id="post-selector" class="post"></select>
+        <input type="text" name="price" class="order-field price" placeholder="Стоимость смены">
+
+        <button type="submit">Добавить заказ</button>
+    </form>
+</div>
+<script src="{% static 'orders/js/new_order.js' %}"></script>
+{% endblock %}

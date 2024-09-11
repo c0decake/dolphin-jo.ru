@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Main %}
+<link rel="stylesheet" href="{% static 'orders/css/my_orders.css' %}">
+<meta name="csrf_token" content="{{ csrf_token }}" id="csrf_token">
+<div class="orders-container">
+    <div class="orders" id="orders"></div>
+</div>
+<script>
+    var staticUrl = "{% static 'orders/icons/' %}";
+</script>
+<script src="{% static 'orders/js/my.js' %}"></script>
+{% endblock %}
